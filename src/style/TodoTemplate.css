@@ -1,0 +1,16 @@
+.template {
+  display: table;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 40rem;
+  height: 47rem;
+  background: dimgray;
+  border-radius: 20px;
+}
+
+.creator {
+  border-radius: 20px;
+  height: 5rem;
+  background: silver;
+}

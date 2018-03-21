@@ -1,0 +1,9 @@
+.todos-wrapper {
+  margin-top: 20px;
+}
+
+.todo {
+  font-size: 35px;
+  border-bottom-style: dotted;
+  padding: 5px;
+}
