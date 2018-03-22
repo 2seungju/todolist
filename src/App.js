@@ -11,15 +11,23 @@ class App extends Component {
       { id: 1, text: 'CSS Study', checked: false },
       { id: 1, text: 'CSS Study', checked: false },
       { id: 1, text: 'CSS Study', checked: false },
-      { id: 1, text: 'CSS Study', checked: false },
-      { id: 1, text: 'CSS Study', checked: false },
-      { id: 1, text: 'CSS Study', checked: false },
-      { id: 1, text: 'CSS Study', checked: false },
     ],
+    keyword: '',
   }
 
   handleCreate = () => {
+    const { todos, keyword } = this.state;
+    const results = todos.concat({
+      id: todos.length,
+      text: keyword,
+      checked: false,
+    });
 
+    this.setState({
+      todos: results,
+    });
+    console.log(this.state.keyword);
+    console.log(this.state.todos);
   }
 
   handleToggle = () => {
@@ -30,14 +38,22 @@ class App extends Component {
 
   }
 
+  handleChange = (e) => {
+    this.setState({
+      keyword: e.target.value,
+    });
+  }
+
   render() {
-    console.log(this.state.todos);
-    const { todos } = this.state
+    const { todos, keyword } = this.state
     return (
       <div className="App">
         <h1>TodoList</h1>
         <TodoTemplate
           todos={todos}
+          value={keyword}
+          onChange={this.handleChange}
+          onCreate={this.handleCreate}
         />
       </div>
     );
