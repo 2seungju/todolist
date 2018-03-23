@@ -4,7 +4,14 @@ import TodoItemList from './TodoItemLIst';
 
 import '../style/TodoTemplate.css';
 
-const TodoTemplate = ({ todos, value, onChange, onCreate }) => {
+const TodoTemplate = ({
+  todos,
+  value,
+  onChange,
+  onCreate,
+  onDelete,
+  onToggle,
+}) => {
   console.log(todos)
   return (
     <div className="template">
@@ -18,6 +25,8 @@ const TodoTemplate = ({ todos, value, onChange, onCreate }) => {
       <div className="itemlist">
         <TodoItemList
           todos={todos}
+          onDelete={onDelete}
+          onToggle={onToggle}
         />
       </div>
     </div>

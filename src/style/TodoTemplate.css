@@ -5,12 +5,14 @@
   margin-top: 4rem;
   width: 40rem;
   height: 47rem;
-  background: dimgray;
+  background: aliceblue;
   border-radius: 20px;
 }
 
 .creator {
   border-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   height: 5rem;
-  background: silver;
+  background: steelblue;
 }

@@ -8,9 +8,9 @@ class App extends Component {
     todos: [
       { id: 0, text: 'React Study', checked: true },
       { id: 1, text: 'CSS Study', checked: false },
-      { id: 1, text: 'CSS Study', checked: false },
-      { id: 1, text: 'CSS Study', checked: false },
-      { id: 1, text: 'CSS Study', checked: false },
+      { id: 2, text: 'CSS Study', checked: false },
+      { id: 3, text: 'CSS Study', checked: false },
+      { id: 4, text: 'CSS Study', checked: false },
     ],
     keyword: '',
   }
@@ -30,12 +30,31 @@ class App extends Component {
     console.log(this.state.todos);
   }
 
-  handleToggle = () => {
+  handleToggle = (id) => {
+    const { todos } = this.state;
+    const index = todos.findIndex(todo => todo.id === id);
+    const selected = todos[index];
+    const nextTodos = [...todos]; // 배열을 복사
+    nextTodos[index] = {
+      ...selected,
+      checked: !selected.checked,
+    };
+
+    this.setState({
+      todos: nextTodos,
+    });
+    console.log(todos);
+  }
+
+  handleCheck = (id) => {
+    const { todos } = this.state;
+    const { checked } = todos.checked;
 
   }
 
-  handleDelete = () => {
-
+  handleDelete = (id) => {
+    const { todos } = this.state;
+    const result = todos.splice()
   }
 
   handleChange = (e) => {
@@ -45,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const { todos, keyword } = this.state
+    const { todos, keyword } = this.state;
     return (
       <div className="App">
         <h1>TodoList</h1>
@@ -54,6 +73,8 @@ class App extends Component {
           value={keyword}
           onChange={this.handleChange}
           onCreate={this.handleCreate}
+          onDelete={this.handleDelete}
+          onToggle={this.handleToggle}
         />
       </div>
     );
