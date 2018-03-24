@@ -17,15 +17,20 @@ class App extends Component {
 
   handleCreate = () => {
     const { todos, keyword } = this.state;
-    const results = todos.concat({
-      id: todos.length,
-      text: keyword,
-      checked: false,
-    });
+    if (keyword !== '') {
+      const results = todos.concat({
+        id: todos.length,
+        text: keyword,
+        checked: false,
+      });
+      this.setState({
+        todos: results,
+      });
+      this.setState({
+        keyword: '',
+      });
+    }
 
-    this.setState({
-      todos: results,
-    });
     console.log(this.state.keyword);
     console.log(this.state.todos);
   }
