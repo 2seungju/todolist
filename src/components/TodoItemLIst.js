@@ -10,17 +10,31 @@ class TodoItemList extends Component {
   }
 
   render() {
-    const { todos, onToggle, onDelete } = this.props;
-    const list = todos.map(({ id, text, checked }) => {
+    const {
+      todos,
+      onToggle,
+      onDelete,
+      onCheck,
+    } = this.props;
+    const list = todos.map(({
+      id,
+      text,
+      checked,
+      color,
+    }) => {
       return (
-      <TodoItem
-        id={id}
-        text={text}
-        checked={checked}
-        onToggle={onToggle}
-        onDelete={onDelete}
-      />
-    )});
+        <TodoItem
+          id={id}
+          key={id}
+          text={text}
+          checked={checked}
+          onToggle={onToggle}
+          onDelete={onDelete}
+          onCheck={onCheck}
+          color={color}
+        />
+      );
+    });
     return (
       <div className="todos-wrapper">
         {list}

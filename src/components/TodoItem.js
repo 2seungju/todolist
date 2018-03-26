@@ -2,19 +2,28 @@ import React from 'react';
 
 import '../style/TodoItem.css';
 
-const handleClick = (id) => {
-  console.log(id);
-};
-
-const TodoItem = ({ id, text, checked, onToggle, onDelete }) => {
+const TodoItem = ({
+  id,
+  text,
+  checked,
+  onToggle,
+  onDelete,
+  onCheck,
+  color
+}) => {
   return (
-    <div className="todos-wrapper" onClick={() => onToggle(id)}>
+    <div className="todos-wrapper">
       <div className="todo">
         {
           checked && (<div className="check-mark">✓</div>)
         }
-        <div className={`todo-text ${checked && 'checked'}`} onClick={handleClick(id)}>{text}</div>
-        <span className="delete">&times;</span>
+        <div
+          className={`todo-text ${checked && 'checked'}`}
+          onClick={() => onCheck(id)}
+          style={{ color: color }}
+        >{text}
+        </div>
+        <span className="delete" onClick={() => onDelete(id)}>&times;</span>
       </div>
     </div>
   );

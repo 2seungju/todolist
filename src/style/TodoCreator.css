@@ -8,8 +8,9 @@
   width: 30rem;
   margin-left: 7%;
   margin-top: 16px;
-  background: steelblue;
+  background: rgb(143, 163, 180);
   border-style: hidden hidden solid hidden;
+  border-color: black;
   outline: none;
 }
 
@@ -22,5 +23,5 @@
 }
 
 .add:hover{
-  background: skyblue;
+  background: steelblue;
 }
