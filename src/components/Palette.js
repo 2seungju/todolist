@@ -5,21 +5,15 @@ class Palett extends React.Component {
     selected: 'black',
   }
 
-
-  componentWillReceiveProps() {
-    console.log(this.state.selected);
-  }
-
   handleChange = (e) => {
     this.setState({
       selected: e.target.value,
     });
-    this.props.onColor(this.state.selected);
+    this.props.onColor(e.target.value); // 부모 컴포넌트의 함수 호출
   }
   render() {
     const { selected } = this.state;
     const { handleChange } = this;
-    console.log(selected);
     return (
       <div>
         <input
@@ -28,7 +22,6 @@ class Palett extends React.Component {
           value="black"
           checked={selected === 'black'}
           onChange={handleChange}
-          onClick={() => console.log(selected)}
         />
         <input
           type="radio"
@@ -36,7 +29,6 @@ class Palett extends React.Component {
           value="red"
           checked={selected === 'red'}
           onChange={handleChange}
-          onClick={() => console.log(selected)}
         />
         <input
           type="radio"

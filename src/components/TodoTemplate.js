@@ -5,7 +5,7 @@ import Palette from './Palette';
 
 import '../style/TodoTemplate.css';
 
-const TodoTemplate = ({
+const TodoTemplate = ({  // 템플릿
   todos,
   value,
   onChange,
@@ -28,6 +28,9 @@ const TodoTemplate = ({
           onEnter={onEnter}
           color={color}
           colors={colors}
+          onColor={onColor}
+        />
+        <Palette
           onColor={onColor}
         />
       </div>

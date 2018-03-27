@@ -18,11 +18,7 @@ class App extends Component {
     selected_color: 'black',
   }
 
-  componentDidUpdate() {
-    console.log(this.state.selected_color);
-}
-
-  handleCreate = () => {
+  handleCreate = () => { // 할일 생성
     const { todos, keyword } = this.state;
     if (keyword !== '') {
       const results = todos.concat({
@@ -40,14 +36,13 @@ class App extends Component {
     }
   }
 
-  handleColor = (color) => {
+  handleColor = (color) => { // color state func
     this.setState({
       selected_color: color,
     });
-    console.log(this.state.selected_color);
   }
 
-  handleKeyPress = (e) => {
+  handleKeyPress = (e) => { // enter func
     if (e.key === 'Enter') {
       this.handleCreate();
     }
@@ -61,7 +56,7 @@ class App extends Component {
     });
   }
 
-  handleCheck = (id) => {
+  handleCheck = (id) => { // check func
     this.handleToggle(id);
     const { todos } = this.state;
     const index = todos.findIndex(todo => todo.id === id);
@@ -77,18 +72,16 @@ class App extends Component {
       todos: nextTodos,
       index: index,
     });
-    console.log(this.state.index);
   }
 
-  handleDelete = (id) => {
+  handleDelete = (id) => { // delete
     const { todos } = this.state;
     this.setState({
       todos: todos.filter(todo => todo.id !== id),
     });
-    console.log(this.state.todos);
   }
 
-  handleChange = (e) => {
+  handleChange = (e) => { // onChagne event
     this.setState({
       keyword: e.target.value,
     });
