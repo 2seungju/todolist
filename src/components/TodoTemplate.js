@@ -27,8 +27,6 @@ const TodoTemplate = ({
           onCreate={onCreate}
           onEnter={onEnter}
           color={color}
-        />
-        <Palette
           colors={colors}
           onColor={onColor}
         />

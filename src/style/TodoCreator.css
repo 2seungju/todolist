@@ -25,3 +25,7 @@
 .add:hover{
   background: steelblue;
 }
+
+.radio {
+  display: block;
+}

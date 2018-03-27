@@ -5,9 +5,9 @@ class Palett extends React.Component {
     selected: 'black',
   }
 
-  shouldComponentUpdate(nextState) {
-    console.log(nextState);
-    return true;
+
+  componentWillReceiveProps() {
+    console.log(this.state.selected);
   }
 
   handleChange = (e) => {
@@ -28,6 +28,7 @@ class Palett extends React.Component {
           value="black"
           checked={selected === 'black'}
           onChange={handleChange}
+          onClick={() => console.log(selected)}
         />
         <input
           type="radio"
@@ -35,6 +36,7 @@ class Palett extends React.Component {
           value="red"
           checked={selected === 'red'}
           onChange={handleChange}
+          onClick={() => console.log(selected)}
         />
         <input
           type="radio"

@@ -44,6 +44,7 @@ class App extends Component {
     this.setState({
       selected_color: color,
     });
+    console.log(this.state.selected_color);
   }
 
   handleKeyPress = (e) => {
