@@ -9,7 +9,7 @@
   margin-left: 7%;
   margin-top: 16px;
   background: rgb(143, 163, 180);
-  border-style: hidden hidden solid hidden;
+  border-style: hidden hidden solid hidden; /* border: 1px solid blue // border-style: solid */
   border-color: black;
   outline: none;
 }

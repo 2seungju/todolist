@@ -44,3 +44,13 @@ class TodoItemList extends Component {
 }
 
 export default TodoItemList;
+
+/*
+  가독성을 위해 이렇게 쓰는 방법도 있습니다.
+
+  return (
+    <div className="todow-wrapper">
+      {todos.map(({ id, ... }) => <TodoItem ... /> )}
+    </div>
+  )
+*/

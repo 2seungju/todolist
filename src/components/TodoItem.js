@@ -30,3 +30,19 @@ const TodoItem = ({
 };
 
 export default TodoItem;
+
+/*
+  1. 줄바꿈
+        <div
+          className={`todo-text ${checked && 'checked'}`}
+          onClick={() => onCheck(id)}
+          style={{ color: color }}
+        >
+          {text}
+        </div>
+  
+  2. className을 바꿔서 스타일을 적용하는 방법도 있습니다.
+    예를 들면
+    (1) style={{ color }} --> className={`todo-text-${color}`}
+    (2) todoItem.css --> .todo-text-red { ... } .todo-text-blue { ... }  
+*/

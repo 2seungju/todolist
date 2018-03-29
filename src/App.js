@@ -30,11 +30,21 @@ class App extends Component {
       this.setState({
         todos: results,
       });
+      /*
+      setstate를 두번으로 나눠서 한 이유는??
+      this.setState({
+        todos: results,
+        keyword: '',
+      })
+      */
+
       this.setState({
         keyword: '',
       });
     }
   }
+
+
 
   handleColor = (color) => { // color state func
     this.setState({
