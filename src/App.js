@@ -2,12 +2,24 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import TodoTemplate from './components/TodoTemplate';
-import './App.css';
+// import './App.css';
 
-// const TodoList = styled.div`
-//   text-align: center;
-//   float: left;
-// `;
+const TodoList = styled.div`
+  text-align: center;
+  margin-top: 3rem;
+
+  @media (max-width:425px) {
+    margin-top: 8%;
+    float: left;
+    width: 100%;
+  };
+  @media (min-width:1000px) and (max-width:1100px) {
+      margin-top: 7%;
+      float: left;
+      width: 100%;
+      font-size: 3rem;
+  };
+`;
 
 class App extends Component {
   state = {
@@ -106,7 +118,7 @@ class App extends Component {
       selected_color,
     } = this.state;
     return (
-      <div className="App">
+      <TodoList>
         <h1>TodoList</h1>
         <TodoTemplate
           todos={todos}
@@ -120,7 +132,7 @@ class App extends Component {
           onColor={this.handleColor}
           color={selected_color}
         />
-      </div>
+      </TodoList>
     );
   }
 }

@@ -1,8 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
+// import '../style/Palette.css';
 
-import '../style/Palette.css';
+const PaletteWrapper = styled.div`
+  background: rgb(143, 163, 180);
+  border-radius: 5px;
+  @media (max-width:425px) {
+    margin-top: 0;
+  }
+  
+  @media (height:1024px) {
+    margin-top: 0;
+  }
+`;
 
-class Palett extends React.Component {
+const Input = styled.input`
+  margin-right: 3%;
+`;
+
+class Palette extends React.Component {
   state = {
     selected: 'black',
   }
@@ -17,38 +33,38 @@ class Palett extends React.Component {
     const { selected } = this.state;
     const { handleChange } = this;
     return (
-      <div className="palette">
-        <input
+      <PaletteWrapper>
+        <Input
           type="radio"
           id="1"
           value="black"
           checked={selected === 'black'}
           onChange={handleChange}
         />
-        <input
+        <Input
           type="radio"
           id="2"
           value="red"
           checked={selected === 'red'}
           onChange={handleChange}
         />
-        <input
+        <Input
           type="radio"
           id="3"
           value="yellow"
           checked={selected === 'yellow'}
           onChange={handleChange}
         />
-        <input
+        <Input
           type="radio"
           id="4"
           value="pink"
           checked={selected === 'pink'}
           onChange={handleChange}
         />
-      </div>
+      </PaletteWrapper>
     );
   }
 }
 
-export default Palett;
+export default Palette;
