@@ -5,7 +5,7 @@ import Palette from './Palette';
 
 import '../style/TodoTemplate.css';
 
-const TodoTemplate = ({  // 템플릿
+const TodoTemplate = ({ // 템플릿
   todos,
   value,
   onChange,

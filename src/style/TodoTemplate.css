@@ -9,6 +9,24 @@
   border-radius: 20px;
 }
 
+@media (max-width:425px) {
+  .template {
+    margin-top: 5%;
+    width: 90%;
+    height: 100%;
+    padding-bottom: 15%;
+  }
+}
+
+@media (min-width:1000px) and (max-width:1100px) {
+  .template {
+    margin-top: 12%;
+    width: 90%;
+    height: 100%;
+    padding-bottom: 15%;
+  }
+}
+
 .creator {
   border-radius: 20px;
   border-bottom-left-radius: 5px;
@@ -16,3 +34,9 @@
   height: 5rem;
   background: rgb(143, 163, 180);
 }
+
+
+  .itemlist {
+    margin-top: 6%;
+  }
+

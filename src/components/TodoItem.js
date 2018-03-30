@@ -11,6 +11,7 @@ const TodoItem = ({
   onCheck,
   color
 }) => {
+  console.log(id);
   return (
     <div className="todos-wrapper">
       <div className="todo">
@@ -18,10 +19,10 @@ const TodoItem = ({
           checked && (<div className="check-mark">✓</div>)
         }
         <div
-          className={`todo-text ${checked && 'checked'}`}
+          className={`todo-text-${color} ${checked && 'checked'}`}
           onClick={() => onCheck(id)}
-          style={{ color: color }}
-        >{text}
+        >
+          {text}
         </div>
         <span className="delete" onClick={() => onDelete(id)}>&times;</span>
       </div>
@@ -40,7 +41,8 @@ export default TodoItem;
         >
           {text}
         </div>
-  
+    => complete
+
   2. className을 바꿔서 스타일을 적용하는 방법도 있습니다.
     예를 들면
     (1) style={{ color }} --> className={`todo-text-${color}`}

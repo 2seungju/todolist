@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import TodoTemplate from './components/TodoTemplate';
+import styled from 'styled-components';
 
+import TodoTemplate from './components/TodoTemplate';
 import './App.css';
+
+// const TodoList = styled.div`
+//   text-align: center;
+//   float: left;
+// `;
 
 class App extends Component {
   state = {
@@ -13,7 +19,6 @@ class App extends Component {
       { id: 4, text: 'CSS Study4', checked: false, color: 'red' },
     ],
     keyword: '',
-    index: -1,
     colors: ['black', 'red', 'yellow', 'pink'],
     selected_color: 'black',
   }
@@ -29,6 +34,7 @@ class App extends Component {
       });
       this.setState({
         todos: results,
+        keyword: '',
       });
       /*
       setstate를 두번으로 나눠서 한 이유는??
@@ -36,15 +42,10 @@ class App extends Component {
         todos: results,
         keyword: '',
       })
+      => complete
       */
-
-      this.setState({
-        keyword: '',
-      });
     }
   }
-
-
 
   handleColor = (color) => { // color state func
     this.setState({
@@ -58,16 +59,16 @@ class App extends Component {
     }
   }
 
-  handleToggle = (id) => {
-    const { todos } = this.state;
-    const index = todos.findIndex(todo => todo.id === id);
-    this.setState({
-      index: index,
-    });
-  }
+  // handleToggle = (id) => {
+  //   const { todos } = this.state;
+  //   const index = todos.findIndex(todo => todo.id === id);
+  //   this.setState({
+  //     index: index,
+  //   });
+  // }
 
   handleCheck = (id) => { // check func
-    this.handleToggle(id);
+    // this.handleToggle(id);
     const { todos } = this.state;
     const index = todos.findIndex(todo => todo.id === id);
     const selected = todos[index];
@@ -113,7 +114,6 @@ class App extends Component {
           onChange={this.handleChange}
           onCreate={this.handleCreate}
           onDelete={this.handleDelete}
-          onToggle={this.handleToggle}
           onEnter={this.handleKeyPress}
           onCheck={this.handleCheck}
           colors={colors}

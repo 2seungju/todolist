@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import TodoItem from './TodoItem';
 
-import '../style/TodoItemList.css';
-
 class TodoItemList extends Component {
   shouldComponentUpdate(nextProps) {
     return this.props.todos !== nextProps.todos;

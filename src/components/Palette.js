@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../style/Palette.css';
+
 class Palett extends React.Component {
   state = {
     selected: 'black',
@@ -15,7 +17,7 @@ class Palett extends React.Component {
     const { selected } = this.state;
     const { handleChange } = this;
     return (
-      <div>
+      <div className="palette">
         <input
           type="radio"
           id="1"
