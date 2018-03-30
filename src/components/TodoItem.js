@@ -52,7 +52,12 @@ const TodoItem = ({
 }) => {
   const TodoText = styled.div`
     color: ${color}
+    :hover {
+      text-decoration: line-through;
+      color: darkgray;
+    }
   `;
+  // checked 아직 안됌
   console.log(id);
   return (
     <TodosWrapper>
