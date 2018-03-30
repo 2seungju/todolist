@@ -28,14 +28,6 @@ const Todo = styled.div`
   }
 `;
 
-// const TodoText = ({ color }) => {
-//   return (
-//     styled.div`
-//     color: ${color}
-//   `
-//   );
-// };
-/* 해결 못함 */
 const Delete = styled.span`
   color: black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -58,6 +50,9 @@ const TodoItem = ({
   onCheck,
   color
 }) => {
+  const TodoText = styled.div`
+    color: ${color}
+  `;
   console.log(id);
   return (
     <TodosWrapper>
@@ -65,12 +60,11 @@ const TodoItem = ({
         {
           checked && (<CheckMark>✓</CheckMark>)
         }
-        <div
-          className={`todo-text-${color} ${checked && 'checked'}`}
+        <TodoText
           onClick={() => onCheck(id)}
         >
           {text}
-        </div>
+        </TodoText>
         <Delete onClick={() => onDelete(id)}>&times;</Delete>
       </Todo>
     </TodosWrapper>
