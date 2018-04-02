@@ -50,14 +50,19 @@ const TodoItem = ({
   onCheck,
   color
 }) => {
-  const TodoText = styled.div`
-    color: ${color}
-    :hover {
-      text-decoration: line-through;
-      color: darkgray;
-    }
-  `;
-  // checked 아직 안됌
+  const Checked = checked ? styled.div`
+  text-decoration: line-through;
+  color: dimgray;
+  :hover {
+    text-decoration: line-through;
+    color: darkgray;
+  ` : styled.div`
+  color: ${color}
+  :hover {
+    text-decoration: line-through;
+    color: darkgray;
+  }
+`;
   console.log(id);
   return (
     <TodosWrapper>
@@ -65,11 +70,11 @@ const TodoItem = ({
         {
           checked && (<CheckMark>✓</CheckMark>)
         }
-        <TodoText
+        <Checked
           onClick={() => onCheck(id)}
         >
           {text}
-        </TodoText>
+        </Checked>
         <Delete onClick={() => onDelete(id)}>&times;</Delete>
       </Todo>
     </TodosWrapper>
@@ -92,5 +97,7 @@ export default TodoItem;
   2. className을 바꿔서 스타일을 적용하는 방법도 있습니다.
     예를 들면
     (1) style={{ color }} --> className={`todo-text-${color}`}
-    (2) todoItem.css --> .todo-text-red { ... } .todo-text-blue { ... }  
+    (2) todoItem.css --> .todo-text-red { ... } .todo-text-blue { ... }
+
+    => complete
 */
